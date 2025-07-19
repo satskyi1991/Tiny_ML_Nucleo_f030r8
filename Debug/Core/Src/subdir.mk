@@ -4,6 +4,9 @@
 ################################################################################
 
 # Add inputs and outputs from these tool invocations to the build variables 
+CPP_SRCS += \
+../Core/Src/main.cpp 
+
 C_SRCS += \
 ../Core/Src/crc.c \
 ../Core/Src/gpio.c \
@@ -15,18 +18,6 @@ C_SRCS += \
 ../Core/Src/sysmem.c \
 ../Core/Src/system_stm32f0xx.c \
 ../Core/Src/usart.c 
-
-OBJS += \
-./Core/Src/crc.o \
-./Core/Src/gpio.o \
-./Core/Src/i2c.o \
-./Core/Src/main.o \
-./Core/Src/stm32f0xx_hal_msp.o \
-./Core/Src/stm32f0xx_it.o \
-./Core/Src/syscalls.o \
-./Core/Src/sysmem.o \
-./Core/Src/system_stm32f0xx.o \
-./Core/Src/usart.o 
 
 C_DEPS += \
 ./Core/Src/crc.d \
@@ -40,10 +31,27 @@ C_DEPS += \
 ./Core/Src/system_stm32f0xx.d \
 ./Core/Src/usart.d 
 
+OBJS += \
+./Core/Src/crc.o \
+./Core/Src/gpio.o \
+./Core/Src/i2c.o \
+./Core/Src/main.o \
+./Core/Src/stm32f0xx_hal_msp.o \
+./Core/Src/stm32f0xx_it.o \
+./Core/Src/syscalls.o \
+./Core/Src/sysmem.o \
+./Core/Src/system_stm32f0xx.o \
+./Core/Src/usart.o 
+
+CPP_DEPS += \
+./Core/Src/main.d 
+
 
 # Each subdirectory must supply rules for building sources it contributes
 Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.c Core/Src/subdir.mk
 	arm-none-eabi-gcc "$<" -mcpu=cortex-m0 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -u _printf_float -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
+Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.cpp Core/Src/subdir.mk
+	arm-none-eabi-g++ "$<" -mcpu=cortex-m0 -std=gnu++14 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F030x8 -c -I../Core/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc -I../Drivers/STM32F0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -fno-exceptions -fno-rtti -fno-use-cxa-atexit -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"$(@:%.o=%.d)" -MT"$@" --specs=nano.specs -mfloat-abi=soft -mthumb -o "$@"
 
 clean: clean-Core-2f-Src
 
