@@ -27,6 +27,7 @@
 /* USER CODE BEGIN Includes */
 #include <stdio.h>
 #include <math.h>
+#include "edge-impulse-sdk/classifier/ei_run_classifier.h"
 
 /* USER CODE END Includes */
 

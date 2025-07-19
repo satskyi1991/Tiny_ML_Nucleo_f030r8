@@ -1,0 +1,12 @@
+Core/Inc/edge-impulse-sdk/CMSIS/DSP/Source/CommonTables/arm_const_structs_f16.o: \
+ ../Core/Inc/edge-impulse-sdk/CMSIS/DSP/Source/CommonTables/arm_const_structs_f16.c \
+ ../Core/Inc/edge-impulse-sdk/dsp/config.hpp \
+ ../Core/Inc/edge-impulse-sdk/CMSIS/DSP/Include/arm_math_types_f16.h \
+ ../Core/Inc/edge-impulse-sdk/CMSIS/DSP/Include/arm_math_types.h \
+ ../Core/Inc/edge-impulse-sdk/CMSIS/Core/Include/cmsis_compiler.h \
+ ../Core/Inc/edge-impulse-sdk/CMSIS/Core/Include/cmsis_gcc.h
+../Core/Inc/edge-impulse-sdk/dsp/config.hpp:
+../Core/Inc/edge-impulse-sdk/CMSIS/DSP/Include/arm_math_types_f16.h:
+../Core/Inc/edge-impulse-sdk/CMSIS/DSP/Include/arm_math_types.h:
+../Core/Inc/edge-impulse-sdk/CMSIS/Core/Include/cmsis_compiler.h:
+../Core/Inc/edge-impulse-sdk/CMSIS/Core/Include/cmsis_gcc.h:

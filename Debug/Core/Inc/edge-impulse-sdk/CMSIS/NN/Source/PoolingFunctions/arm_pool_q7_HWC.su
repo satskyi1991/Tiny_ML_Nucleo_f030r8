@@ -1,0 +1,2 @@
+../Core/Inc/edge-impulse-sdk/CMSIS/NN/Source/PoolingFunctions/arm_pool_q7_HWC.c:172:6:arm_maxpool_q7_HWC	56	static
+../Core/Inc/edge-impulse-sdk/CMSIS/NN/Source/PoolingFunctions/arm_pool_q7_HWC.c:328:6:arm_avepool_q7_HWC	64	static

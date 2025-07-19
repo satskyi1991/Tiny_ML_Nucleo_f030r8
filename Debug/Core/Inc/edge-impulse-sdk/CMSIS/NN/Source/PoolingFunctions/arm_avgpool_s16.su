@@ -1,0 +1,2 @@
+../Core/Inc/edge-impulse-sdk/CMSIS/NN/Source/PoolingFunctions/arm_avgpool_s16.c:75:21:arm_avgpool_s16	128	static
+../Core/Inc/edge-impulse-sdk/CMSIS/NN/Source/PoolingFunctions/arm_avgpool_s16.c:296:9:arm_avgpool_s16_get_buffer_size	16	static
